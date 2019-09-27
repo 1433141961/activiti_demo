@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yzw.mapper.RoleDao">
+  <resultMap id="BaseResultMap" type="com.yzw.model.Role">
+    <id column="ROLE_ID" jdbcType="INTEGER" property="roleId" />
+    <result column="ROLE_NAME" jdbcType="VARCHAR" property="roleName" />
+    <result column="ROLE_DESC" jdbcType="VARCHAR" property="roleDesc" />
+  </resultMap>
+<!--  <sql id="Base_Column_List">
+    ROLE_ID, ROLE_NAME, ROLE_DESC
+  </sql>-->
+
+  <insert id="insertRole" parameterType="com.yzw.model.Role">
+    INSERT INTO role(ROLE_NAME, ROLE_DESC) VALUES (#{roleName},#{roleDesc});
+  </insert>
+
+  <select id="selectAllRole" resultMap="BaseResultMap">
+    SELECT * FROM role;
+  </select>
+
+
+  <select id="selectRoleByUserId" resultMap="BaseResultMap">
+    SELECT r.* FROM role r,user_role ur WHERE ur.USER_ID=#{userId} and r.ROLE_ID=ur.ROLE_ID
+  </select>
+
+
+
+
+</mapper>

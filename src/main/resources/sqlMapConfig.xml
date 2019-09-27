@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <mappers>
+        <mapper resource="com/yzw/mapper/UserDao.xml"></mapper>
+        <mapper resource="com/yzw/mapper/FunctionDao.xml"></mapper>
+        <mapper resource="com/yzw/mapper/LeaveBillDao.xml"></mapper>
+        <mapper resource="com/yzw/mapper/RoleDao.xml"></mapper>
+        <mapper resource="com/yzw/mapper/RoleFunDao.xml"></mapper>
+        <mapper resource="com/yzw/mapper/UserRoleDao.xml"></mapper>
+    </mappers>
+
+</configuration>

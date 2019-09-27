@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yzw.mapper.UserDao">
+  <resultMap id="BaseResultMap" type="com.yzw.model.User">
+    <id column="USER_ID" jdbcType="INTEGER" property="userId" />
+    <result column="USER_NAME" jdbcType="VARCHAR" property="userName" />
+    <result column="PASSWORD" jdbcType="VARCHAR" property="password" />
+    <result column="TEL_NUM" jdbcType="INTEGER" property="telNum" />
+    <result column="E_MAOL" jdbcType="VARCHAR" property="eMaol" />
+  </resultMap>
+
+
+  <update id="updateByPrimaryKey" parameterType="com.yzw.model.User">
+    update user
+    set USER_NAME = #{userName,jdbcType=VARCHAR},
+      `PASSWORD` = #{password,jdbcType=VARCHAR},
+      TEL_NUM = #{telNum,jdbcType=INTEGER},
+      E_MAOL = #{eMaol,jdbcType=VARCHAR}
+    where USER_ID = #{userId,jdbcType=INTEGER}
+  </update>
+
+  <select id="selectAllUser" resultMap="BaseResultMap">
+    select * FROM user;
+  </select>
+
+  <insert id="insert" parameterType="com.yzw.model.User">
+    insert into user(USER_NAME, PASSWORD, TEL_NUM, E_MAOL) values(#{userName},#{password},#{telNum},#{eMaol})
+  </insert>
+
+  <select id="selectUserByUserNameAndPassword" parameterType="map" resultMap="BaseResultMap">
+    select * from user t where t.USER_NAME=#{userName} and t.PASSWORD=#{password};
+  </select>
+
+  <select id="selectUrlByUserId" parameterType="int" resultType="String">
+    select f.URL from
+    user_role ur,
+    role r,
+    role_fun rf,
+    function f
+     WHERE ur.ROLE_ID=r.ROLE_ID
+     and r.ROLE_ID=rf.ROLE_ID
+     AND rf.FUN_ID=f.FUN_ID
+      and ur.USER_ID=#{userId};
+  </select>
+
+  <select id="selectUserByUserId" parameterType="int" resultMap="BaseResultMap">
+    select * from user t where t.USER_ID=#{userId};
+  </select>
+</mapper>

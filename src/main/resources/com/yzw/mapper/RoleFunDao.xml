@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yzw.mapper.RoleFunDao">
+  <resultMap id="BaseResultMap" type="com.yzw.model.RoleFun">
+    <result column="ROLE_ID" jdbcType="INTEGER" property="roleId" />
+    <result column="FUN_ID" jdbcType="INTEGER" property="funId" />
+  </resultMap>
+  <delete id="deleteRoleFunByRoleId" parameterType="int">
+    delete FROM role_fun WHERE ROLE_ID=#{roleId};
+  </delete>
+
+  <insert id="insertRoleFun" parameterType="com.yzw.model.RoleFun">
+    insert INTO role_fun(ROLE_ID,FUN_ID) VALUES (#{roleId},#{funId});
+  </insert>
+
+</mapper>

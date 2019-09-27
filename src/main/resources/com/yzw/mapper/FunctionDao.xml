@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yzw.mapper.FunctionDao">
+    <resultMap id="BaseResultMap" type="com.yzw.model.Function">
+        <id column="FUN_ID" jdbcType="INTEGER" property="funId"/>
+        <result column="FUN_NAME" jdbcType="VARCHAR" property="funName"/>
+        <result column="URL" jdbcType="VARCHAR" property="url"/>
+        <result column="FUN_DESC" jdbcType="VARCHAR" property="funDesc"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    FUN_ID, FUN_NAME, URL, FUN_DESC
+  </sql>
+
+    <select id="selectAllFun" resultMap="BaseResultMap">
+    select * from function
+  </select>
+
+    <select id="selectFunByRoleId" parameterType="int" resultMap="BaseResultMap">
+    select f.* from role_fun rf, function f
+    where rf.ROLE_ID = #{roleId}
+    and rf.FUN_ID=f.FUN_ID;
+  </select>
+
+    <delete id="deleteFunByFunId" parameterType="int">
+    delete from function where FUN_ID = #{funId}
+  </delete>
+    <insert id="insertFun" parameterType="com.yzw.model.Function">
+        INSERT INTO function(FUN_NAME,URL,FUN_DESC) VALUES (#{funName},#{url},#{funDesc})
+    </insert>
+
+</mapper>
