@@ -10,4 +10,4 @@ HTML，css，jQuery，ajax，mysql数据库，jsp。
 
 
 
-项登录页面地址：http://localhost:8080/ecps/console/login.jsp"
+项登录页面所在目录：src\main\webapp\ecps\console\login.jsp
