@@ -30,7 +30,7 @@ public class FunController {
     UserService userService;
 
     /**
-     * 查询所有角色
+     * 列出所有角色
      * @return
      */
     @RequestMapping("selectAllFun.do")
@@ -40,7 +40,7 @@ public class FunController {
         return "permission/listFun";
     }
     /**
-     * 跳转到添加角色
+     * 跳转到添加角色页面
      * @return
      */
     @RequestMapping("toAddFun.do")
@@ -57,7 +57,7 @@ public class FunController {
         return "redirect:selectAllFun.do";
     }
     /**
-     * 添加角色
+     * 根据id删除角色
      * @return
      */
     @RequestMapping("deleteFunByFunId.do")

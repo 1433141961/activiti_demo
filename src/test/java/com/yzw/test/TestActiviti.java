@@ -1,7 +1,6 @@
 package com.yzw.test;
 
 import com.yzw.service.FlowService;
-import org.activiti.engine.RepositoryService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
