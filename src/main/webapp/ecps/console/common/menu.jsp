@@ -6,7 +6,7 @@
     <ul id="nav_m" class="ul">
         <menu:displayMenu name="ItemMgmtMenu"/>
         <menu:displayMenu name="permission"/>
-        <menu:displayMenu name="activiti"/>
+        <%--<menu:displayMenu name="activiti"/>--%>
      </ul>
     <p></p>
 </div>

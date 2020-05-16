@@ -168,7 +168,8 @@
                         <td>${user.password}</td>
                         <td>${user.telNum}</td>
                         <td>${user.eMaol}</td>
-                        <td><a href="javaScript:void(0)" onclick="addUser(${user.userId})">分配角色</a></td>
+                        <td><a href="javaScript:void(0)" onclick="addUser(${user.userId})">分配角色</a>&nbsp;&nbsp;<a href="${path}/user/delete.do?userId=${user.userId}">删除</a></td>
+                        <td></td>
                     </tr>
                 </c:forEach>
 

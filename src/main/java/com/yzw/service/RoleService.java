@@ -10,4 +10,6 @@ public interface RoleService {
     List<Role> selectAllRole();
 
     List<Role> selectRoleByUserId(int userId);
+
+    void deleteByRoleId(Integer roleId);
 }

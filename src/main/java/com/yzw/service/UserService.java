@@ -14,4 +14,5 @@ public interface UserService {
 
     List<String> selectUrlByUserId(int userId);
 
+    void deleteByUserId(Integer id);
 }

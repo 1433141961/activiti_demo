@@ -25,4 +25,9 @@ public class RoleDaoImpl extends SqlSessionDaoSupport implements RoleDao {
         List<Role> roles = getSqlSession().selectList(ns+"selectRoleByUserId",userId);
         return roles;
     }
+
+    @Override
+    public void deleteByRoleId(Integer roleId) {
+        getSqlSession().delete(ns+"deleteByRoleId",roleId);
+    }
 }

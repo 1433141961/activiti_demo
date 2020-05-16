@@ -158,7 +158,7 @@
 			<tr>
 				<td>${role.roleName}</td>
 				<td>${role.roleDesc}</td>
-				<td><a href="JavaScript:void (0)" onclick="addFun(${role.roleId})">添加权限</a></td>
+				<td><a href="JavaScript:void (0)" onclick="addFun(${role.roleId})">添加权限</a>&nbsp;&nbsp;<a href="${path}/role/delete.do?roleId=${role.roleId}">删除</a></td>
 			</tr>
 		</c:forEach>
 

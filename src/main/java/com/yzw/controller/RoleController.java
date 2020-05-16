@@ -55,6 +55,12 @@ public class RoleController {
        return "redirect:selectAllRole.do";
     }
 
+    @RequestMapping("delete.do")
+    public String addRole(Integer roleId){
+        roleService.deleteByRoleId(roleId);
+       return "redirect:selectAllRole.do";
+    }
+
 
 
     /**

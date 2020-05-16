@@ -2,5 +2,5 @@
 <%@ include file="taglibs.jsp" %>
 
 <div class="footer">
-    <a href="yzw" target="_blank">工作流项目-yzw</a>
+    <a href="yzw" target="_blank">工作流项目-顾爽</a>
 </div>

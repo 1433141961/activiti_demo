@@ -35,7 +35,7 @@
 				<span id="spanEmail"></span>
             </li>
             <li>
-            	<label class="alg_t"><span style="color:red">*</span> 电话号码：</label><input type="text" name="telNum" class="text state" reg="^[0-9]\d{11}$" tip="必须是0-9的数字，长度必须为11"/>
+            	<label class="alg_t"><span style="color:red">*</span> 电话号码：</label><input type="text" name="telNum" class="text state"/>
 				<span></span>
             </li>
             

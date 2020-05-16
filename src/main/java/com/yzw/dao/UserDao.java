@@ -16,4 +16,5 @@ public interface UserDao {
 
     User selectUserByUserId(int userId);
 
+    void deleteByUserId(Integer id);
 }

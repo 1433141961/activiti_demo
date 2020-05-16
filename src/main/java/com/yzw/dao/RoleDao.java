@@ -12,4 +12,5 @@ public interface RoleDao {
     List<Role> selectRoleByUserId(int userId);
 
 
+    void deleteByRoleId(Integer roleId);
 }

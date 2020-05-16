@@ -49,6 +49,18 @@ public class UserController  {
         return "redirect:selectAllUser.do";
     }
 
+    @RequestMapping("delete.do")
+    public String delete(Integer userId){
+        userService.deleteByUserId(userId);
+        return "redirect:selectAllUser.do";
+    }
+
+    @RequestMapping("register.do")
+    public String register(User user){
+        userService.insert(user);
+        return "../../ecps/console/login";
+    }
+
     /**
      * 通过ajax查询功能
      * @return

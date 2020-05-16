@@ -43,5 +43,10 @@ public class UserDaoImpl extends SqlSessionDaoSupport implements UserDao {
         return user;
     }
 
+    @Override
+    public void deleteByUserId(Integer id) {
+        getSqlSession().delete(ns+"deleteByUserId",id);
+    }
+
 
 }

@@ -27,6 +27,10 @@
     insert into user(USER_NAME, PASSWORD, TEL_NUM, E_MAOL) values(#{userName},#{password},#{telNum},#{eMaol})
   </insert>
 
+  <delete id="deleteByUserId" parameterType="java.lang.Integer">
+    delete from user where USER_ID=#{id}
+  </delete>
+
   <select id="selectUserByUserNameAndPassword" parameterType="map" resultMap="BaseResultMap">
     select * from user t where t.USER_NAME=#{userName} and t.PASSWORD=#{password};
   </select>

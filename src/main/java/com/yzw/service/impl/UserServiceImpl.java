@@ -36,4 +36,9 @@ public class UserServiceImpl implements UserService {
         List<String> urls = userDao.selectUrlByUserId(userId);
         return urls;
     }
+
+    @Override
+    public void deleteByUserId(Integer id) {
+        userDao.deleteByUserId(id);
+    }
 }
